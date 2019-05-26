@@ -18,7 +18,7 @@
         $allowed = array('jpg', 'jpeg', 'png');
 
        
-        /*Details */
+        //details here
         $fname = addslashes($_POST['fname']);
         $lname = addslashes($_POST['lname']);
         $nophone = $_POST['nophone'];

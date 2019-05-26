@@ -10,7 +10,7 @@
         $address = $_POST['address'];
         
 
-
+        //updating database
         $sql = "UPDATE members SET FirstName='$fname', LastName ='$lname', PhoneNumber='$nophone',Email='$email', MemberAddress='$address' WHERE MemberID=$id";
         mysqli_query($conn, $sql);
 
