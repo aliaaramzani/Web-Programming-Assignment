@@ -46,7 +46,8 @@
                 </tr>
             </thead>
      <?php 
-	    //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
+	    //while($res = mysql_fetch_array($result))
+    // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
         if ($result->num_rows>0){    
             while($res = mysqli_fetch_array($result)) {
                 echo "<tr><td>First Name" . $row["FirstName"] .
@@ -56,8 +57,8 @@
                     "</td><td>Address" . $row["Address"] .
                     //buttons: see more info / edit info
                     "</td><a href=\"member\viewmember.php?id=$res[MemberID]\">
-                    <button type=\"button\" class=\"btn\">See More</button></a>  <a href=\"member\editmember.php?id=$res[MemberID]\">
-                    <button type=\"button\" class=\"btn\">Edit Info</button></a> <br><tr>"; //edit info
+                    <button type=\"button\" class=\"edit-btn\">See More</button></a>  <a href=\"member\editmember.php?id=$res[MemberID]\">
+                    <button type=\"button\" class=\"edit-btn\">Edit Info</button></a> <br><tr>"; //edit info
                 }
                 echo "</table>";
         }
@@ -65,7 +66,7 @@
                 echo "You have no members listed yet.";
         }
             
-            $conn-> close();
+        mysqli_close($conn);
 	?>
         </table>
     </main>
